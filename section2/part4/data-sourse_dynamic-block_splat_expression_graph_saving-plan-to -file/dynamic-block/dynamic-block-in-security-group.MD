@@ -1,4 +1,5 @@
-### before.tf
+in case of dynamic block use of iterator is optional.
+### before-use-dynamic-block.tf
 
 ```sh
 resource "aws_security_group" "demo_sg" {
@@ -42,14 +43,14 @@ resource "aws_security_group" "demo_sg" {
 
 ```
 
-### dynamic-block.tf
+### after-use-dynamic-block.tf
 
 ```sh
 
 
 
 variable "sg_ports" {
-  type        = list(number)
+  type        = list(number)  // it means this is a list of number
   description = "list of ingress ports"
   default     = [8200, 8201,8300, 9200, 9500]
 }
@@ -59,11 +60,20 @@ resource "aws_security_group" "dynamicsg" {
   description = "Ingress for Vault"
 
   dynamic "ingress" {
-    for_each = var.sg_ports
-    iterator = port
+    for_each = var.sg_ports     //for each means it pick all values in sg_port one by one. 
+    iterator = port             // iteraror = anyname, after picking it put the value in port and port assign those value in content one be one
     content {
       from_port   = port.value
       to_port     = port.value
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
+  }
+  dynamic "egress" {           // in this case we do not use iterator
+    for_each = var.sg_ports    //for each means it pick all values in sg_port one by one.
+    content {
+      from_port   = egress.value  // after picking it put the value in engress and engress assign those value in content one be one
+      to_port     = egress.value
       protocol    = "tcp"
       cidr_blocks = ["0.0.0.0/0"]
     }
