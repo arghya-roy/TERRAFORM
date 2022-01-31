@@ -11,7 +11,7 @@ resource "aws_instance" "myec2" {
 }
    resource "aws_instance" "myec2" {
    ami = "ami-082b5a644766e0e6f"
-   instance_type = var.types[us-east-1]
+   instance_type = var.types["us-east-1"]
 }
 
 variable "list" {
