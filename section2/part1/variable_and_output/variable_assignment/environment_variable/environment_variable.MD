@@ -24,6 +24,7 @@ variable "instancetype" {
 ```sh
 setx TF_VAR_instancetype t2.large
 ``` 
+in case of windows after using setx we need to plan from a different terminal
 ### when terraform installed in Linux / MAC :
 ```sh
 export TF_VAR_instancetype="t2.nano"
