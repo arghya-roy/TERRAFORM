@@ -1,4 +1,4 @@
-### main.sh
+### main.tf
 
 ```sh
 provider "aws" {
@@ -18,6 +18,6 @@ variable "instancetype" {
   default = "t2.micro"
 }
 ```
-### after use terraform apply it take the default vale t2.micro
+after use terraform apply it take the default vale t2.micro
 but we can override that using commandline or from a different file.
 we will see that in next part.
