@@ -1,5 +1,5 @@
 suppose we make a tf file where instance type is t2.micro. then we save the plan file in a file called demopath. after that we change the instance type to t2.small and apply it.
-so now if you want to apply that ftf where instance type is t2.micro, then we just run this command - 
+so now if you want to apply that tf where instance type is t2.micro, then we just run this command - 
 ```
 terraform apply file/path/with/name
 ```
