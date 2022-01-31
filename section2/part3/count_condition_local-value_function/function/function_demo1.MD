@@ -1,4 +1,4 @@
-## This snippet is from the Terraform Function video.
+
 
 ### functions.tf
 
@@ -10,7 +10,7 @@ provider "aws" {
 }
 
 locals {
-  time = formatdate("DD MMM YYYY hh:mm ZZZ", timestamp())
+  time = formatdate("DD MMM YYYY hh:mm ZZZ", timestamp()) // timestamp is a function which give the time. if we want to format that time according to us then we use formatdate                                                             // functiom
 }
 
 variable "region" {
@@ -33,17 +33,17 @@ variable "ami" {
 
 resource "aws_key_pair" "loginkey" {
   key_name   = "login-key"
-  public_key = file("${path.module}/id_rsa.pub")
+  public_key = file("${path.module}/id_rsa.pub")  // it reads the file and put the content in public_key
 }
 
 resource "aws_instance" "app-dev" {
-   ami = lookup(var.ami,var.region)
+   ami = lookup(var.ami,var.region)    // lookup is a function. At first it pickup the region name and then according to the region name it pick up the ami.
    instance_type = "t2.micro"
    key_name = aws_key_pair.loginkey.key_name
    count = 2
 
    tags = {
-     Name = element(var.tags,count.index)
+     Name = element(var.tags,count.index) // element is also a function. it takes the default values and use them as tag in ec2 one by one( in first ec2 name = firstec2, in                                               // second ec2 name = secondec2 )
    }
 }
 
