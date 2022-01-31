@@ -10,7 +10,7 @@ terraform validate // it will show that where is the error
 terraform taint aws_instance.myec2 // it change the state of resourses in state files from running to tainted (not in aws )
                                    // after that when we will use terraform apply then it destroy that resourse and recreate it.
 ```
-<h1>debugging - (linux)</h1>
+<h1>debugging - (linux) </h1>
 ```
 export TF_LOG=TRACE
 terraform plan // it will show all step by step process in more details
