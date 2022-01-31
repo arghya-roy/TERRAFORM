@@ -23,4 +23,5 @@ but we can override that using commandline or from a different file.
 ### override this default value using command line
 ```sh
 terraform plan -var="instancetype=t2.small"
+terraform apply
 ```
