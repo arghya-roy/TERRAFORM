@@ -7,6 +7,9 @@ aws_secret_access_key = paste here
 aws_access_key_id = paste here
 aws_secret_access_key = paste here
 ```
+### here if we want to add two eip in two different account, then we should use multiple provider with alias.
+### (in this example regions are different and account is also different)
+### alias - just a name which refers to the particular provider
 ### providers.tf
 ```sh
 provider "aws" {
