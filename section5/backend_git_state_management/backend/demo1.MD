@@ -1,6 +1,9 @@
 
 # this code is not tested.
 ### we need to create a s3 bucket and allow versioning. and create a dynamodb table with lockid.
+ ### dynamodb - create table - table name - any name & primary key = LockID
+### s3 - bucket-name - enable version                           
+```
 terraform {
   backend "s3" {
     bucket = "bucket_name"
@@ -19,3 +22,4 @@ provider "aws" {
 resource "aws_eip" "myeip" {
   vpc = "true"
 }
+```
