@@ -1,4 +1,4 @@
-backend means we save the tfstate file to remote area ( not SCM ). from where all team member can access that.
+backend means we save the tfstate file to remote area ( not SCM ). from where all team member can access that. tfstate contains many important data, so this is not a good practise to keep it in SCM.
 we can use many service as backend, but here we take a example os s3 with dynamoDB.
 ### s3 is used to store the file.
 ### dynamodb is used to lock the file.
