@@ -1,5 +1,6 @@
 ### from my current location > folder modules > folder ec2 > main.tf
 https://registry.terraform.io/modules/terraform-aws-modules/ec2-instance/aws/latest
+# copy from above and paste below
 ```
 module "ec2_instance" {
   source  = "terraform-aws-modules/ec2-instance/aws"
