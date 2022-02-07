@@ -91,7 +91,7 @@ resource "aws_route_table" "main-public" {
   vpc_id = aws_vpc.main.id
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.main-gw.id
+    gateway_id = aws_internet_gateway.main-gw.id  # it will create local target by default
   }
 
   tags = {
