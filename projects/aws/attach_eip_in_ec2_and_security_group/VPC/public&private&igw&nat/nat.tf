@@ -1,10 +1,10 @@
 # nat gw
 resource "aws_eip" "nat" {
-  vpc = true
+  vpc = true     # it will create a elastic ip
 }
 
 resource "aws_nat_gateway" "nat-gw" {
-  allocation_id = aws_eip.nat.id
+  allocation_id = aws_eip.nat.id      # attach the eip here
   subnet_id     = aws_subnet.main-public-1.id
   depends_on    = [aws_internet_gateway.main-gw]
 }
