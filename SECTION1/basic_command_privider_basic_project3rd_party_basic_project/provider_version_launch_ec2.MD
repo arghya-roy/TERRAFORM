@@ -5,7 +5,8 @@ but if we need to use a particular version then we declerare that.
 declerare version is a good practice beacause a node which is running on a version 
 that may not run on a different version.
 
-```provider "aws" {
+```
+provider "aws" {
   region     = "us-west-2"
   access_key = "PUT-YOUR-ACCESS-KEY-HERE"
   secret_key = "PUT-YOUR-SECRET-KEY-HERE"
