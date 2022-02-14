@@ -20,7 +20,8 @@ resource "aws_instance" "myec2" {
 ```
 ### Commands Used to save plan as file:
 ```sh
-terraform plan -out=demopath  // this will be a binary file named demopath
+terraform plan -out=demopath  // this will be a binary file, named demopath. after running this, file will be created automatically.
+
 ```
 ### Commands Used to apply the saved file:
 ```
