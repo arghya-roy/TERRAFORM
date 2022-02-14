@@ -12,7 +12,7 @@ variable "elb_names" {
 
 resource "aws_iam_user" "lb" {
   name = var.elb_names[count.index]
-  count = 3
+  count = length(var.elb_names)
   path = "/system/"
 }
 ```
