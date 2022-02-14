@@ -1,3 +1,4 @@
+```
 provider "aws" {
   region     = "us-west-2"
   access_key = "PUT-YOUR-ACCESS-KEY-HERE"
@@ -33,3 +34,4 @@ resource "aws_security_group" "allow_tls" {
 #    cidr_blocks = [aws_eip.lb.public_ip/32]
   }
 }
+```
