@@ -16,3 +16,4 @@ terraform workspace list    // to see all workspace
 terraform workspace select dev   // to select a workspace, means to change a workspace
 ```
 # each and every workspace maintain a seperate tfstate file. 
+we can compare workspace with different enviroment like - production enviroment to production workspace, development environment to development workspace, testing environment to testing workspace.
